@@ -49,4 +49,15 @@ btnNode.addEventListener('click', ()=>{
       render();
 });
 
+todosNode.addEventListener('click', (event)=>{
+    if (event.target.tagName !== 'BUTTON'){
+        return;
+    }
+const id = event.target.dataset.id;
+deleteTodo(id);
+
+render();
+
+});
+
 render();
