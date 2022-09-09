@@ -1,8 +1,10 @@
 const todosNode = document.querySelector('.js-todos');
+const inputNode = document.querySelector('.js-input');
+const btnNode = document.querySelector('.js-btn');
 
 let todos = [];
 
-function addToDo(text) {
+function addTodo(text) {
     const todo = {
         text,
         done: false,
@@ -29,13 +31,22 @@ function render(){
         };
 
         html  += `
-            <div>${todo.text}</div>
+            <div>
+                 ${todo.text}
+                 <button data-id='${todo.id}'>Done</button>
+            </div>
         `;
     })
 
     todosNode.innerHTML = html;
 }
 
-addToDo('Купить хлеб')
+btnNode.addEventListener('click', ()=>{
+      const text = inputNode.value;
+
+      addTodo(text);
+
+      render();
+});
 
 render();
