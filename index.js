@@ -1,4 +1,4 @@
-const todosNode = document.querySelector('js-todos');
+const todosNode = document.querySelector('.js-todos');
 
 let todos = [];
 
@@ -29,12 +29,13 @@ function render(){
         };
 
         html  += `
-        <div>${todo.text}</div>
+            <div>${todo.text}</div>
         `;
     })
 
     todosNode.innerHTML = html;
 }
 
-addToDo('купить хлеб');
+addToDo('Купить хлеб')
+
 render();
